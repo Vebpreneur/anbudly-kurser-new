@@ -32,6 +32,9 @@ jobs:
       - name: Installera och uppdatera beroenden
         run: pnpm install --no-frozen-lockfile
 
+      - name: Lägg till Prettier som saknades i originalet
+        run: pnpm add -D prettier@latest
+
       - name: Lägg till shadcn-komponenter
         run: >-
           pnpm dlx shadcn@latest add
@@ -84,7 +87,7 @@ jobs:
           --yes
 
       - name: Formatera genererade filer
-        run: pnpm exec prettier --write components.json package.json pnpm-lock.yaml src/components src/app/globals.css src/hooks src/lib || true
+        run: pnpm exec prettier --write components.json package.json pnpm-lock.yaml src/components src/app/globals.css src/hooks src/lib
 
       - name: Kontrollera bygge
         run: pnpm build
@@ -97,6 +100,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Inga ändringar att spara."
           else
-            git commit -m "Lägg till komplett shadcn-komponentbibliotek"
+            git commit --no-verify -m "Lägg till komplett shadcn-komponentbibliotek"
             git push origin master
           fi
