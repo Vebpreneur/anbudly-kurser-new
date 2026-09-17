@@ -15,6 +15,7 @@ export const sidebarNav = [
     pages: [
       { title: 'Alla kurser', href: '/docs/kurser' },
       { title: 'Grundkurs i LOU', href: '/docs/kurser/lou-grundkurs' },
+      { title: 'Arbetsbok & checklistor', href: '/docs/kurser/lou-grundkurs/arbetsbok' },
       { title: '1. Grunder och begrepp', href: '/docs/kurser/lou-grundkurs/01-grunder' },
       { title: '2. Grundprinciperna', href: '/docs/kurser/lou-grundkurs/02-principer' },
       { title: '3. Planering', href: '/docs/kurser/lou-grundkurs/03-planering' },
