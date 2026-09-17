@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '.github/workflows/install-shadcn-library.yml'
+      - 'package.json'
 
 permissions:
   contents: write
@@ -28,8 +29,8 @@ jobs:
           node-version: 22
           cache: pnpm
 
-      - name: Installera befintliga beroenden
-        run: pnpm install --frozen-lockfile
+      - name: Installera och uppdatera beroenden
+        run: pnpm install --no-frozen-lockfile
 
       - name: Lägg till shadcn-komponenter
         run: >-
