@@ -3,41 +3,223 @@ title: Grundkurs i LOU
 description: En strukturerad introduktion till offentlig upphandling enligt LOU.
 ---
 
-# Grundkurs i LOU
+<div className="mb-8">
+  <div className="mb-4 flex flex-wrap gap-2">
+    <Badge>Grundkurs</Badge>
+    <Badge variant="secondary">10 delar</Badge>
+    <Badge variant="outline">Offentlig upphandling</Badge>
+  </div>
 
-Den här kursen ger en sammanhängande förståelse för hur offentlig upphandling enligt LOU fungerar i praktiken. Fokus ligger inte bara på reglerna i sig, utan på hur processen hänger ihop från behov och planering till krav, utvärdering, avtal och möjliga rättsmedel.
+  # Grundkurs i LOU
+
+  Den här kursen ger en sammanhängande förståelse för hur offentlig upphandling enligt LOU fungerar i praktiken. Du följer processen från behov och planering till krav, utvärdering, avtal och rättsmedel.
+</div>
+
+<div className="mb-8 grid gap-4 md:grid-cols-3">
+  <Card>
+    <CardHeader>
+      <CardTitle>Nivå</CardTitle>
+      <CardDescription>Grundläggande</CardDescription>
+    </CardHeader>
+  </Card>
+  <Card>
+    <CardHeader>
+      <CardTitle>Omfattning</CardTitle>
+      <CardDescription>10 delar inklusive praktiskt fall och slutprov</CardDescription>
+    </CardHeader>
+  </Card>
+  <Card>
+    <CardHeader>
+      <CardTitle>Förkunskaper</CardTitle>
+      <CardDescription>Inga särskilda förkunskaper krävs</CardDescription>
+    </CardHeader>
+  </Card>
+</div>
+
+<Card className="mb-8">
+  <CardHeader>
+    <CardTitle>Din kursprogression</CardTitle>
+    <CardDescription>Du har ännu inte markerat någon del som genomförd.</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <Progress value={0} />
+  </CardContent>
+</Card>
 
 ## Kursmål
 
 Efter kursen ska du kunna:
 
-- förstå de centrala begreppen inom offentlig upphandling,
-- förklara de grundläggande upphandlingsprinciperna,
-- beskriva de viktigaste stegen i en upphandlingsprocess,
-- förstå skillnaden mellan kvalificeringskrav, tekniska krav och tilldelningskriterier,
-- följa logiken bakom utvärdering och tilldelning,
-- förstå vad som händer efter tilldelningsbeslutet,
-- känna igen situationer där överprövning eller andra rättsmedel kan bli aktuella.
+<div className="grid gap-4 md:grid-cols-2">
+  <Card>
+    <CardHeader>
+      <CardTitle>Förstå regelverket</CardTitle>
+    </CardHeader>
+    <CardContent>
+      Förklara centrala begrepp, de grundläggande principerna och hur LOU styr upphandlingsprocessen.
+    </CardContent>
+  </Card>
+
+  <Card>
+    <CardHeader>
+      <CardTitle>Följa processen</CardTitle>
+    </CardHeader>
+    <CardContent>
+      Beskriva de viktigaste stegen från planering och val av förfarande till tilldelning och avtal.
+    </CardContent>
+  </Card>
+
+  <Card>
+    <CardHeader>
+      <CardTitle>Skilja mellan krav</CardTitle>
+    </CardHeader>
+    <CardContent>
+      Förstå skillnaden mellan kvalificeringskrav, tekniska krav och tilldelningskriterier.
+    </CardContent>
+  </Card>
+
+  <Card>
+    <CardHeader>
+      <CardTitle>Förstå rättsmedlen</CardTitle>
+    </CardHeader>
+    <CardContent>
+      Känna igen situationer där överprövning eller andra rättsmedel kan bli aktuella.
+    </CardContent>
+  </Card>
+</div>
 
 ## För vem?
 
 Kursen passar både dig som arbetar hos en upphandlande organisation och dig som arbetar hos en leverantör. Den fungerar också som grund för senare fördjupningskurser i Anbudly.
 
+<Alert className="my-6">
+  <AlertTitle>Så är kursen upplagd</AlertTitle>
+  <AlertDescription>
+    Börja med del 1 och följ ordningen första gången. Varje del bygger vidare på den föregående och leder fram till ett praktiskt fall och ett slutprov.
+  </AlertDescription>
+</Alert>
+
 ## Kursens delar
 
-1. [Grunder och begrepp](/docs/kurser/lou-grundkurs/01-grunder)
-2. [De grundläggande principerna](/docs/kurser/lou-grundkurs/02-principer)
-3. [Planering av upphandlingen](/docs/kurser/lou-grundkurs/03-planering)
-4. [Förfaranden](/docs/kurser/lou-grundkurs/04-forfarande)
-5. [Kravställning](/docs/kurser/lou-grundkurs/05-krav)
-6. [Utvärdering och tilldelning](/docs/kurser/lou-grundkurs/06-utvardering)
-7. [Avtal och uppföljning](/docs/kurser/lou-grundkurs/07-avtal)
-8. [Rättsmedel](/docs/kurser/lou-grundkurs/08-rattsmedel)
-9. [Praktiskt fall](/docs/kurser/lou-grundkurs/09-praktiskt-fall)
-10. [Slutprov](/docs/kurser/lou-grundkurs/10-slutprov)
+<div className="grid gap-4 md:grid-cols-2">
+  <Card>
+    <CardHeader>
+      <div className="mb-2"><Badge variant="secondary">Del 1</Badge></div>
+      <CardTitle>Grunder och begrepp</CardTitle>
+      <CardDescription>Roller, centrala begrepp och hur upphandlingssystemet är uppbyggt.</CardDescription>
+    </CardHeader>
+    <CardFooter>
+      <UiButton asChild><a href="/docs/kurser/lou-grundkurs/01-grunder">Öppna del 1</a></UiButton>
+    </CardFooter>
+  </Card>
 
-## Så använder du kursen
+  <Card>
+    <CardHeader>
+      <div className="mb-2"><Badge variant="secondary">Del 2</Badge></div>
+      <CardTitle>De grundläggande principerna</CardTitle>
+      <CardDescription>Likabehandling, transparens, proportionalitet, icke-diskriminering och ömsesidigt erkännande.</CardDescription>
+    </CardHeader>
+    <CardFooter>
+      <UiButton asChild><a href="/docs/kurser/lou-grundkurs/02-principer">Öppna del 2</a></UiButton>
+    </CardFooter>
+  </Card>
 
-Läs delarna i ordning första gången. När du senare behöver repetera ett område kan kursen användas som uppslagsverk. Varje del ska successivt kompletteras med konkreta exempel, kontrollfrågor, rättskällor och praktiska situationer.
+  <Card>
+    <CardHeader>
+      <div className="mb-2"><Badge variant="secondary">Del 3</Badge></div>
+      <CardTitle>Planering av upphandlingen</CardTitle>
+      <CardDescription>Behov, marknad, strategi, tidsplan och de viktigaste besluten före annonsering.</CardDescription>
+    </CardHeader>
+    <CardFooter>
+      <UiButton asChild><a href="/docs/kurser/lou-grundkurs/03-planering">Öppna del 3</a></UiButton>
+    </CardFooter>
+  </Card>
 
-> Kursmaterialet är pedagogiskt innehåll. Juridiska påståenden ska verifieras mot aktuella rättskällor innan materialet publiceras kommersiellt.
+  <Card>
+    <CardHeader>
+      <div className="mb-2"><Badge variant="secondary">Del 4</Badge></div>
+      <CardTitle>Förfaranden</CardTitle>
+      <CardDescription>Hur val av förfarande påverkar processen och vilka moment som följer.</CardDescription>
+    </CardHeader>
+    <CardFooter>
+      <UiButton asChild><a href="/docs/kurser/lou-grundkurs/04-forfarande">Öppna del 4</a></UiButton>
+    </CardFooter>
+  </Card>
+
+  <Card>
+    <CardHeader>
+      <div className="mb-2"><Badge variant="secondary">Del 5</Badge></div>
+      <CardTitle>Kravställning</CardTitle>
+      <CardDescription>Hur krav struktureras och hur olika typer av krav hålls isär.</CardDescription>
+    </CardHeader>
+    <CardFooter>
+      <UiButton asChild><a href="/docs/kurser/lou-grundkurs/05-krav">Öppna del 5</a></UiButton>
+    </CardFooter>
+  </Card>
+
+  <Card>
+    <CardHeader>
+      <div className="mb-2"><Badge variant="secondary">Del 6</Badge></div>
+      <CardTitle>Utvärdering och tilldelning</CardTitle>
+      <CardDescription>Prövning, utvärderingsmodeller, tilldelningsbeslut och dokumentation.</CardDescription>
+    </CardHeader>
+    <CardFooter>
+      <UiButton asChild><a href="/docs/kurser/lou-grundkurs/06-utvardering">Öppna del 6</a></UiButton>
+    </CardFooter>
+  </Card>
+
+  <Card>
+    <CardHeader>
+      <div className="mb-2"><Badge variant="secondary">Del 7</Badge></div>
+      <CardTitle>Avtal och uppföljning</CardTitle>
+      <CardDescription>Från tilldelning till avtal, genomförande och uppföljning.</CardDescription>
+    </CardHeader>
+    <CardFooter>
+      <UiButton asChild><a href="/docs/kurser/lou-grundkurs/07-avtal">Öppna del 7</a></UiButton>
+    </CardFooter>
+  </Card>
+
+  <Card>
+    <CardHeader>
+      <div className="mb-2"><Badge variant="secondary">Del 8</Badge></div>
+      <CardTitle>Rättsmedel</CardTitle>
+      <CardDescription>Överprövning, avtalsspärr och andra rättsliga konsekvenser.</CardDescription>
+    </CardHeader>
+    <CardFooter>
+      <UiButton asChild><a href="/docs/kurser/lou-grundkurs/08-rattsmedel">Öppna del 8</a></UiButton>
+    </CardFooter>
+  </Card>
+
+  <Card>
+    <CardHeader>
+      <div className="mb-2"><Badge variant="secondary">Del 9</Badge></div>
+      <CardTitle>Praktiskt fall</CardTitle>
+      <CardDescription>Tillämpa kursens centrala moment på ett sammanhängande upphandlingsscenario.</CardDescription>
+    </CardHeader>
+    <CardFooter>
+      <UiButton asChild><a href="/docs/kurser/lou-grundkurs/09-praktiskt-fall">Öppna del 9</a></UiButton>
+    </CardFooter>
+  </Card>
+
+  <Card>
+    <CardHeader>
+      <div className="mb-2"><Badge>Del 10</Badge></div>
+      <CardTitle>Slutprov</CardTitle>
+      <CardDescription>Kontrollera att du behärskar kursens centrala begrepp och samband.</CardDescription>
+    </CardHeader>
+    <CardFooter>
+      <UiButton asChild><a href="/docs/kurser/lou-grundkurs/10-slutprov">Öppna slutprovet</a></UiButton>
+    </CardFooter>
+  </Card>
+</div>
+
+<Separator className="my-10" />
+
+## Innan publicering
+
+<Alert>
+  <AlertTitle>Rättskällor och kvalitetssäkring</AlertTitle>
+  <AlertDescription>
+    Kursens juridiska innehåll ska källkontrolleras mot aktuella lagar, förarbeten, avgöranden och myndighetskällor innan kommersiell publicering.
+  </AlertDescription>
+</Alert>
