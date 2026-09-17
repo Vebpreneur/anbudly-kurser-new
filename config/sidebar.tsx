@@ -24,7 +24,8 @@ export const sidebarNav = [
       { title: '7. Avtal', href: '/docs/kurser/lou-grundkurs/07-avtal' },
       { title: '8. Rättsmedel', href: '/docs/kurser/lou-grundkurs/08-rattsmedel' },
       { title: '9. Praktiskt fall', href: '/docs/kurser/lou-grundkurs/09-praktiskt-fall' },
-      { title: '10. Slutprov', href: '/docs/kurser/lou-grundkurs/10-slutprov' },
+      { title: '10. Modellösning', href: '/docs/kurser/lou-grundkurs/10-modellosning' },
+      { title: '11. Slutprov', href: '/docs/kurser/lou-grundkurs/11-slutprov' },
     ],
   },
   {
