@@ -15,6 +15,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/docs/kurser/lou-grundkurs/10-slutprov',
+        destination: '/docs/kurser/lou-grundkurs/10-modellosning',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 const withContentlayer = createContentlayerPlugin({
