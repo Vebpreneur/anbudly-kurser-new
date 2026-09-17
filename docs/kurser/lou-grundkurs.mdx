@@ -1,24 +1,24 @@
 ---
 title: Grundkurs i LOU
-description: En strukturerad introduktion till offentlig upphandling enligt LOU.
+description: En komplett introduktion till offentlig upphandling enligt LOU med teori, tillämpning, modellösning och självrättande slutprov.
 ---
 
 <div className="mb-8">
   <div className="mb-4 flex flex-wrap gap-2">
     <Badge>Grundkurs</Badge>
-    <Badge variant="secondary">10 delar</Badge>
+    <Badge variant="secondary">11 delar</Badge>
     <Badge variant="outline">Offentlig upphandling</Badge>
   </div>
 
 # Grundkurs i LOU
 
-Den här kursen ger en sammanhängande förståelse för hur offentlig upphandling enligt LOU fungerar i praktiken. Du följer processen från behov och planering till krav, utvärdering, avtal och rättsmedel.
+Den här kursen ger en sammanhängande förståelse för hur offentlig upphandling enligt LOU fungerar i praktiken. Du följer processen från behov och planering till krav, utvärdering, avtal, rättsmedel och praktisk tillämpning.
 </div>
 
 | | |
 |---|---|
 | **Nivå** | Grundläggande |
-| **Omfattning** | 10 delar, praktiskt fall och slutprov |
+| **Omfattning** | 8 teoridelar, praktiskt fall, modellösning och självrättande slutprov |
 | **Förkunskaper** | Inga särskilda förkunskaper krävs |
 
 <Separator className="my-8" />
@@ -27,7 +27,7 @@ Den här kursen ger en sammanhängande förståelse för hur offentlig upphandli
 
 <div className="mb-2 flex items-center justify-between gap-4 text-sm">
   <span>Du har ännu inte markerat någon del som genomförd.</span>
-  <Badge variant="outline">0 av 10</Badge>
+  <Badge variant="outline">0 av 11</Badge>
 </div>
 
 <Progress value={0} className="my-4" />
@@ -38,9 +38,11 @@ Efter kursen ska du kunna:
 
 - förklara centrala begrepp och de grundläggande upphandlingsprinciperna,
 - beskriva processen från planering och val av förfarande till tilldelning och avtal,
-- skilja mellan kvalificeringskrav, tekniska krav och tilldelningskriterier,
+- skilja mellan kvalificeringskrav, krav på upphandlingsföremålet och tilldelningskriterier,
 - förstå logiken bakom prövning, utvärdering och tilldelningsbeslut,
-- känna igen när överprövning eller andra rättsmedel kan bli aktuella.
+- koppla krav och mervärden till avtalsvillkor och uppföljning,
+- identifiera centrala risker och situationer där rättsmedel kan bli aktuella,
+- tillämpa helheten i ett sammanhängande upphandlingsfall.
 
 <Note type="info">
   <strong>För vem?</strong><br />
@@ -56,11 +58,19 @@ Efter kursen ska du kunna:
   </Step>
   <Step>
     <StepTitle>Följ processen</StepTitle>
-    <StepContent>Därefter går du igenom planering, förfarande, krav, utvärdering och avtal i rätt ordning.</StepContent>
+    <StepContent>Därefter går du igenom planering, förfarande, krav, utvärdering, avtal och rättsmedel i rätt ordning.</StepContent>
   </Step>
   <Step>
     <StepTitle>Tillämpa kunskapen</StepTitle>
-    <StepContent>Kursen avslutas med ett praktiskt fall och ett slutprov som knyter ihop helheten.</StepContent>
+    <StepContent>Du arbetar igenom ett större praktiskt fall och skriver en egen upphandlingsstrategi.</StepContent>
+  </Step>
+  <Step>
+    <StepTitle>Jämför och förbättra</StepTitle>
+    <StepContent>Med modellösningen granskar du din egen strategi och ser vilka delar som behöver stärkas.</StepContent>
+  </Step>
+  <Step>
+    <StepTitle>Verifiera kunskapen</StepTitle>
+    <StepContent>Kursen avslutas med ett självrättande kunskapsprov och tillämpningsfrågor.</StepContent>
   </Step>
 </Steps>
 
@@ -70,93 +80,58 @@ Efter kursen ska du kunna:
 
 <div className="grid gap-5 md:grid-cols-2">
   <Card className="group h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:bg-muted/20 hover:shadow-lg">
-    <CardHeader>
-      <div className="mb-2 flex items-center justify-between gap-3"><Badge variant="secondary">Del 1</Badge><span className="text-xs font-medium text-muted-foreground">Grund</span></div>
-      <CardTitle className="transition-colors group-hover:text-primary">Grunder och begrepp</CardTitle>
-      <CardDescription>Roller, centrala begrepp och hur upphandlingssystemet är uppbyggt.</CardDescription>
-    </CardHeader>
+    <CardHeader><div className="mb-2 flex items-center justify-between gap-3"><Badge variant="secondary">Del 1</Badge><span className="text-xs font-medium text-muted-foreground">Grund</span></div><CardTitle className="transition-colors group-hover:text-primary">Grunder och begrepp</CardTitle><CardDescription>Roller, centrala begrepp och hur upphandlingssystemet är uppbyggt.</CardDescription></CardHeader>
     <CardFooter><UiButton asChild className="w-full sm:w-auto"><a href="/docs/kurser/lou-grundkurs/01-grunder">Öppna del 1 →</a></UiButton></CardFooter>
   </Card>
 
   <Card className="group h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:bg-muted/20 hover:shadow-lg">
-    <CardHeader>
-      <div className="mb-2 flex items-center justify-between gap-3"><Badge variant="secondary">Del 2</Badge><span className="text-xs font-medium text-muted-foreground">Juridik</span></div>
-      <CardTitle className="transition-colors group-hover:text-primary">De grundläggande principerna</CardTitle>
-      <CardDescription>Likabehandling, öppenhet, proportionalitet, icke-diskriminering och ömsesidigt erkännande.</CardDescription>
-    </CardHeader>
+    <CardHeader><div className="mb-2 flex items-center justify-between gap-3"><Badge variant="secondary">Del 2</Badge><span className="text-xs font-medium text-muted-foreground">Juridik</span></div><CardTitle className="transition-colors group-hover:text-primary">De grundläggande principerna</CardTitle><CardDescription>Likabehandling, öppenhet, proportionalitet, icke-diskriminering och ömsesidigt erkännande.</CardDescription></CardHeader>
     <CardFooter><UiButton asChild className="w-full sm:w-auto"><a href="/docs/kurser/lou-grundkurs/02-principer">Öppna del 2 →</a></UiButton></CardFooter>
   </Card>
 
   <Card className="group h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:bg-muted/20 hover:shadow-lg">
-    <CardHeader>
-      <div className="mb-2 flex items-center justify-between gap-3"><Badge variant="secondary">Del 3</Badge><span className="text-xs font-medium text-muted-foreground">Process</span></div>
-      <CardTitle className="transition-colors group-hover:text-primary">Planering av upphandlingen</CardTitle>
-      <CardDescription>Behov, marknad, värde, strategi och de viktigaste besluten före annonsering.</CardDescription>
-    </CardHeader>
+    <CardHeader><div className="mb-2 flex items-center justify-between gap-3"><Badge variant="secondary">Del 3</Badge><span className="text-xs font-medium text-muted-foreground">Process</span></div><CardTitle className="transition-colors group-hover:text-primary">Planering av upphandlingen</CardTitle><CardDescription>Behov, marknad, värde, strategi och de viktigaste besluten före annonsering.</CardDescription></CardHeader>
     <CardFooter><UiButton asChild className="w-full sm:w-auto"><a href="/docs/kurser/lou-grundkurs/03-planering">Öppna del 3 →</a></UiButton></CardFooter>
   </Card>
 
   <Card className="group h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:bg-muted/20 hover:shadow-lg">
-    <CardHeader>
-      <div className="mb-2 flex items-center justify-between gap-3"><Badge variant="secondary">Del 4</Badge><span className="text-xs font-medium text-muted-foreground">Process</span></div>
-      <CardTitle className="transition-colors group-hover:text-primary">Förfaranden</CardTitle>
-      <CardDescription>Öppet, selektivt och andra förfaranden samt grunderna för direktupphandling.</CardDescription>
-    </CardHeader>
+    <CardHeader><div className="mb-2 flex items-center justify-between gap-3"><Badge variant="secondary">Del 4</Badge><span className="text-xs font-medium text-muted-foreground">Process</span></div><CardTitle className="transition-colors group-hover:text-primary">Förfaranden</CardTitle><CardDescription>Öppet, selektivt och andra förfaranden samt grunderna för direktupphandling.</CardDescription></CardHeader>
     <CardFooter><UiButton asChild className="w-full sm:w-auto"><a href="/docs/kurser/lou-grundkurs/04-forfarande">Öppna del 4 →</a></UiButton></CardFooter>
   </Card>
 
   <Card className="group h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:bg-muted/20 hover:shadow-lg">
-    <CardHeader>
-      <div className="mb-2 flex items-center justify-between gap-3"><Badge variant="secondary">Del 5</Badge><span className="text-xs font-medium text-muted-foreground">Krav</span></div>
-      <CardTitle className="transition-colors group-hover:text-primary">Kravställning</CardTitle>
-      <CardDescription>Kvalificeringskrav, krav på leveransen, bevisning och tilldelningskriterier.</CardDescription>
-    </CardHeader>
+    <CardHeader><div className="mb-2 flex items-center justify-between gap-3"><Badge variant="secondary">Del 5</Badge><span className="text-xs font-medium text-muted-foreground">Krav</span></div><CardTitle className="transition-colors group-hover:text-primary">Kravställning</CardTitle><CardDescription>Kvalificeringskrav, krav på leveransen, bevisning och tilldelningskriterier.</CardDescription></CardHeader>
     <CardFooter><UiButton asChild className="w-full sm:w-auto"><a href="/docs/kurser/lou-grundkurs/05-krav">Öppna del 5 →</a></UiButton></CardFooter>
   </Card>
 
   <Card className="group h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:bg-muted/20 hover:shadow-lg">
-    <CardHeader>
-      <div className="mb-2 flex items-center justify-between gap-3"><Badge variant="secondary">Del 6</Badge><span className="text-xs font-medium text-muted-foreground">Tilldelning</span></div>
-      <CardTitle className="transition-colors group-hover:text-primary">Utvärdering och tilldelning</CardTitle>
-      <CardDescription>Prövning, utvärderingsgrunder, viktning, tilldelningsbeslut och dokumentation.</CardDescription>
-    </CardHeader>
+    <CardHeader><div className="mb-2 flex items-center justify-between gap-3"><Badge variant="secondary">Del 6</Badge><span className="text-xs font-medium text-muted-foreground">Tilldelning</span></div><CardTitle className="transition-colors group-hover:text-primary">Utvärdering och tilldelning</CardTitle><CardDescription>Prövning, utvärderingsgrunder, viktning, tilldelningsbeslut och dokumentation.</CardDescription></CardHeader>
     <CardFooter><UiButton asChild className="w-full sm:w-auto"><a href="/docs/kurser/lou-grundkurs/06-utvardering">Öppna del 6 →</a></UiButton></CardFooter>
   </Card>
 
   <Card className="group h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:bg-muted/20 hover:shadow-lg">
-    <CardHeader>
-      <div className="mb-2 flex items-center justify-between gap-3"><Badge variant="secondary">Del 7</Badge><span className="text-xs font-medium text-muted-foreground">Avtal</span></div>
-      <CardTitle className="transition-colors group-hover:text-primary">Avtal och uppföljning</CardTitle>
-      <CardDescription>Kontraktsvillkor, uppföljning, avvikelser, ändringar och förlängningar.</CardDescription>
-    </CardHeader>
+    <CardHeader><div className="mb-2 flex items-center justify-between gap-3"><Badge variant="secondary">Del 7</Badge><span className="text-xs font-medium text-muted-foreground">Avtal</span></div><CardTitle className="transition-colors group-hover:text-primary">Avtal och uppföljning</CardTitle><CardDescription>Kontraktsvillkor, uppföljning, avvikelser, ändringar och förlängningar.</CardDescription></CardHeader>
     <CardFooter><UiButton asChild className="w-full sm:w-auto"><a href="/docs/kurser/lou-grundkurs/07-avtal">Öppna del 7 →</a></UiButton></CardFooter>
   </Card>
 
   <Card className="group h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:bg-muted/20 hover:shadow-lg">
-    <CardHeader>
-      <div className="mb-2 flex items-center justify-between gap-3"><Badge variant="secondary">Del 8</Badge><span className="text-xs font-medium text-muted-foreground">Juridik</span></div>
-      <CardTitle className="transition-colors group-hover:text-primary">Rättsmedel</CardTitle>
-      <CardDescription>Avtalsspärr, överprövning, avtals giltighet, skadestånd och tidsfrister.</CardDescription>
-    </CardHeader>
+    <CardHeader><div className="mb-2 flex items-center justify-between gap-3"><Badge variant="secondary">Del 8</Badge><span className="text-xs font-medium text-muted-foreground">Juridik</span></div><CardTitle className="transition-colors group-hover:text-primary">Rättsmedel</CardTitle><CardDescription>Avtalsspärr, överprövning, avtals giltighet, skadestånd och tidsfrister.</CardDescription></CardHeader>
     <CardFooter><UiButton asChild className="w-full sm:w-auto"><a href="/docs/kurser/lou-grundkurs/08-rattsmedel">Öppna del 8 →</a></UiButton></CardFooter>
   </Card>
 
   <Card className="group h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:bg-muted/20 hover:shadow-lg">
-    <CardHeader>
-      <div className="mb-2 flex items-center justify-between gap-3"><Badge variant="outline">Del 9</Badge><span className="text-xs font-medium text-muted-foreground">Tillämpning</span></div>
-      <CardTitle className="transition-colors group-hover:text-primary">Praktiskt fall</CardTitle>
-      <CardDescription>Arbeta igenom en kommunal IT-supportupphandling från behov till avtal och rättsmedel.</CardDescription>
-    </CardHeader>
+    <CardHeader><div className="mb-2 flex items-center justify-between gap-3"><Badge variant="outline">Del 9</Badge><span className="text-xs font-medium text-muted-foreground">Tillämpning</span></div><CardTitle className="transition-colors group-hover:text-primary">Praktiskt fall</CardTitle><CardDescription>Arbeta igenom en kommunal IT-supportupphandling från behov till avtal och rättsmedel.</CardDescription></CardHeader>
     <CardFooter><UiButton asChild className="w-full sm:w-auto"><a href="/docs/kurser/lou-grundkurs/09-praktiskt-fall">Öppna praktiskt fall →</a></UiButton></CardFooter>
   </Card>
 
   <Card className="group h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:bg-muted/20 hover:shadow-lg">
-    <CardHeader>
-      <div className="mb-2 flex items-center justify-between gap-3"><Badge>Del 10</Badge><span className="text-xs font-medium text-muted-foreground">Examination</span></div>
-      <CardTitle className="transition-colors group-hover:text-primary">Slutprov</CardTitle>
-      <CardDescription>20 kunskapsfrågor och fem fallfrågor som täcker hela kursen.</CardDescription>
-    </CardHeader>
-    <CardFooter><UiButton asChild className="w-full sm:w-auto"><a href="/docs/kurser/lou-grundkurs/10-slutprov">Starta slutprovet →</a></UiButton></CardFooter>
+    <CardHeader><div className="mb-2 flex items-center justify-between gap-3"><Badge variant="outline">Del 10</Badge><span className="text-xs font-medium text-muted-foreground">Självgranskning</span></div><CardTitle className="transition-colors group-hover:text-primary">Modellösning och självgranskning</CardTitle><CardDescription>Jämför din strategi med en strukturerad modell och poängsätt din egen lösning.</CardDescription></CardHeader>
+    <CardFooter><UiButton asChild className="w-full sm:w-auto"><a href="/docs/kurser/lou-grundkurs/10-modellosning">Öppna modellösningen →</a></UiButton></CardFooter>
+  </Card>
+
+  <Card className="group h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:bg-muted/20 hover:shadow-lg">
+    <CardHeader><div className="mb-2 flex items-center justify-between gap-3"><Badge>Del 11</Badge><span className="text-xs font-medium text-muted-foreground">Examination</span></div><CardTitle className="transition-colors group-hover:text-primary">Slutprov</CardTitle><CardDescription>20 självrättande kunskapsfrågor och fem tillämpningsfall som täcker hela kursen.</CardDescription></CardHeader>
+    <CardFooter><UiButton asChild className="w-full sm:w-auto"><a href="/docs/kurser/lou-grundkurs/11-slutprov">Starta slutprovet →</a></UiButton></CardFooter>
   </Card>
 </div>
 
