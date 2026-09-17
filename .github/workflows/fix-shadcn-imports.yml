@@ -33,12 +33,6 @@ jobs:
           grep -RIl "from 'cn'" src/components/ui | xargs -r sed -i "s/from 'cn'/from '@\/lib\/utils'/g"
           grep -RIl 'from "cn"' src/components/ui | xargs -r sed -i 's/from "cn"/from "@\/lib\/utils"/g'
 
-      - name: Installera beroenden
-        run: pnpm install --frozen-lockfile
-
-      - name: Bygg projektet
-        run: pnpm build
-
       - name: Spara rättningen
         run: |
           git config user.name "github-actions[bot]"
@@ -50,3 +44,9 @@ jobs:
             HUSKY=0 git commit -m "Rätta shadcn cn-importer"
             git push origin master
           fi
+
+      - name: Installera beroenden
+        run: pnpm install --frozen-lockfile
+
+      - name: Bygg projektet
+        run: pnpm build
