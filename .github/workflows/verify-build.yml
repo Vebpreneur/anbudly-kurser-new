@@ -1,0 +1,34 @@
+name: Kontrollera bygge
+
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'docs/**'
+      - 'config/**'
+      - 'contentlayer.config.ts'
+      - 'next.config.ts'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hämta repository
+        uses: actions/checkout@v4
+
+      - name: Installera pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Installera Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Installera beroenden
+        run: pnpm install --frozen-lockfile
+
+      - name: Bygg projektet
+        run: pnpm build
