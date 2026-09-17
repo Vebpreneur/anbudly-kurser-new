@@ -8,6 +8,7 @@ on:
       - 'config/**'
       - 'contentlayer.config.ts'
       - 'next.config.ts'
+      - '.github/workflows/verify-build.yml'
 
 jobs:
   build:
