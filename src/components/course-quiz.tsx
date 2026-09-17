@@ -214,3 +214,136 @@ export function CourseQuiz({
     </section>
   );
 }
+
+const louGrundkursQuestions: CourseQuizQuestion[] = [
+  {
+    q: 'Vad beskriver bäst en offentlig upphandling?',
+    options: ['Ett internt budgetbeslut', 'En reglerad process för att anskaffa varor, tjänster eller byggentreprenader', 'Ett avtal mellan två privata företag', 'Enbart annonseringen av ett inköp'],
+    a: 1,
+    e: 'Offentlig upphandling omfattar hela anskaffningsprocessen och är inte samma sak som bara annonseringen.'
+  },
+  {
+    q: 'Vilken princip kräver att jämförbara leverantörer behandlas lika?',
+    options: ['Proportionalitet', 'Likabehandling', 'Ömsesidigt erkännande', 'Kostnadseffektivitet'],
+    a: 1,
+    e: 'Likabehandlingsprincipen innebär att leverantörer i jämförbara situationer ska behandlas lika.'
+  },
+  {
+    q: 'Vad är kärnan i proportionalitetsprincipen?',
+    options: ['Alla krav måste vara identiska i alla upphandlingar', 'Endast pris får användas', 'Krav får inte vara mer långtgående än vad som behövs för syftet', 'Alla leverantörer måste ha samma omsättning'],
+    a: 2,
+    e: 'Krav och åtgärder ska stå i rimlig proportion till upphandlingens syfte och omfattning.'
+  },
+  {
+    q: 'Varför gör man en marknadsanalys före annonsering?',
+    options: ['För att välja vinnare i förväg', 'För att förstå marknaden, möjliga lösningar, konkurrensen och riskerna innan kraven låses', 'För att slippa uppskatta kontraktsvärdet', 'För att ersätta utvärderingen'],
+    a: 1,
+    e: 'Marknadsanalysen hjälper organisationen att utforma en konkurrensutsatt och genomförbar upphandling.'
+  },
+  {
+    q: 'Vad ska normalt beaktas när upphandlingens värde uppskattas?',
+    options: ['Bara första avtalsåret', 'Bara årets budget', 'Den uppskattade totala ersättningen inklusive relevanta optioner och förlängningar', 'Endast leverantörens vinst'],
+    a: 2,
+    e: 'Värdet ska beräknas utifrån den totala uppskattade ersättningen, inklusive relevanta optioner och förlängningar.'
+  },
+  {
+    q: 'Vilka två förfaranden över tröskelvärdena enligt LOU kan användas utan särskilda materiella förutsättningar?',
+    options: ['Öppet och selektivt förfarande', 'Konkurrenspräglad dialog och direktupphandling', 'Innovationspartnerskap och direktupphandling', 'Förhandlat förfarande utan annonsering och konkurrenspräglad dialog'],
+    a: 0,
+    e: 'Öppet och selektivt förfarande är de grundläggande förfarandena som kan användas utan att särskilda förutsättningar först behöver vara uppfyllda.'
+  },
+  {
+    q: 'Vad kännetecknar selektivt förfarande?',
+    options: ['Alla lämnar fullständiga anbud direkt', 'Det är alltid en direktupphandling', 'Leverantörer ansöker först om att delta och kvalificerade leverantörer bjuds därefter in att lämna anbud', 'Det finns inga kvalificeringskrav'],
+    a: 2,
+    e: 'Selektivt förfarande har först en ansöknings- och urvalsfas och därefter en anbudsfas.'
+  },
+  {
+    q: 'När kan direktupphandling bland annat användas enligt LOU:s beloppsregel?',
+    options: ['När värdet understiger 700 000 kronor', 'När minst tre leverantörer finns', 'När myndigheten helst vill undvika annonsering', 'När kontraktet är längre än två år'],
+    a: 0,
+    e: 'Från 1 januari 2026 är direktupphandlingsgränsen enligt LOU 700 000 kronor för vanliga varor, tjänster och byggentreprenader. Det finns även andra rättsliga grunder för direktupphandling.'
+  },
+  {
+    q: 'Vad är ett kvalificeringskrav?',
+    options: ['Ett krav på leverantörens förmåga eller förutsättningar att fullgöra kontraktet', 'Ett prisavdrag i utvärderingen', 'Ett avtalsvite', 'Ett beslut om vinnare'],
+    a: 0,
+    e: 'Kvalificeringen gäller leverantörens förutsättningar att delta och fullgöra kontraktet.'
+  },
+  {
+    q: 'Vad är ett obligatoriskt krav på det som upphandlas?',
+    options: ['En frivillig bonus', 'En miniminivå som anbudet måste uppfylla', 'Samma sak som ett tilldelningsbeslut', 'Ett krav som först gäller fem år efter avtalsstart'],
+    a: 1,
+    e: 'Ett obligatoriskt krav fungerar som en tröskel: anbudet måste uppfylla kravet för att kunna godtas.'
+  },
+  {
+    q: 'Vilka tre grunder används över tröskelvärdena för att identifiera det ekonomiskt mest fördelaktiga anbudet?',
+    options: ['Pris, omsättning och antal anställda', 'Bästa förhållandet mellan pris och kvalitet, kostnad samt pris', 'Kvalitet, geografi och referenser', 'Pris, dialog och förhandling'],
+    a: 1,
+    e: 'LOU anger grunderna bästa förhållandet mellan pris och kvalitet, kostnad samt pris.'
+  },
+  {
+    q: 'Vad är ett tilldelningskriterium?',
+    options: ['Ett kriterium som används för att jämföra godkända anbud i utvärderingen', 'En regel om vem som får överpröva', 'Ett krav på myndighetens interna organisation', 'En avtalsförlängning'],
+    a: 0,
+    e: 'Tilldelningskriterier används för att jämföra anbud och identifiera vilket som är ekonomiskt mest fördelaktigt.'
+  },
+  {
+    q: 'Varför bör en utvärderingsmodell testas med hypotetiska anbud före annonsering?',
+    options: ['För att kunna byta vinnare senare', 'För att upptäcka oväntade eller orimliga effekter innan modellen blir styrande', 'För att slippa beskriva modellen', 'För att bestämma vilka leverantörer som ska uteslutas'],
+    a: 1,
+    e: 'Testning gör det möjligt att upptäcka svagheter i modellen innan leverantörerna börjar konkurrera utifrån den.'
+  },
+  {
+    q: 'Vad är ett tilldelningsbeslut?',
+    options: ['Samma sak som kontraktet', 'Beslutet om vilken eller vilka leverantörer myndigheten avser att tilldela kontrakt', 'En faktura', 'Ett internt dokument utan betydelse för leverantörer'],
+    a: 1,
+    e: 'Tilldelningsbeslutet meddelar resultatet av upphandlingen men är inte i sig det slutliga kontraktet.'
+  },
+  {
+    q: 'Vad är huvudsyftet med avtalsspärren?',
+    options: ['Att ge myndigheten tid att ändra krav', 'Att ge leverantörer möjlighet att granska tilldelningen och vid behov ansöka om överprövning innan avtal ingås', 'Att stoppa alla leveranser i ett år', 'Att ersätta tilldelningsbeslutet'],
+    a: 1,
+    e: 'Under avtalsspärren får avtal inte ingås och leverantörer kan ansöka om överprövning.'
+  },
+  {
+    q: 'Hur lång är den normala minsta avtalsspärren när tilldelningsbeslutet skickas elektroniskt?',
+    options: ['2 dagar', '5 dagar', '10 dagar', '30 dagar'],
+    a: 2,
+    e: 'Den normala minsta avtalsspärren är 10 dagar när tilldelningsbeslutet skickas elektroniskt.'
+  },
+  {
+    q: 'Varför bör kvalitet som gav mervärdespoäng i utvärderingen avspeglas i avtalet?',
+    options: ['För att den kvalitet som påverkade tilldelningen också ska bli bindande och möjlig att följa upp', 'Det behövs aldrig', 'Bara för att avtalet ska bli längre', 'För att kunna ändra utvärderingen efteråt'],
+    a: 0,
+    e: 'Annars riskerar organisationen att välja och betala för ett mervärde som inte säkras under leveransen.'
+  },
+  {
+    q: 'Varför kan avtalsändringar vara upphandlingsrättsligt känsliga?',
+    options: ['För att ett väsentligt förändrat kontrakt kan avvika från den affär som konkurrensutsattes', 'För att avtal aldrig får ändras', 'För att endast leverantören får föreslå ändringar', 'För att pris aldrig får indexeras'],
+    a: 0,
+    e: 'Väsentliga förändringar kan innebära att kontraktet i praktiken blivit en annan affär än den som konkurrensutsattes.'
+  },
+  {
+    q: 'Vad behöver en leverantör i förenklad form visa vid en överprövning av upphandlingen?',
+    options: ['Bara att leverantören inte vann', 'Ett upphandlingsrättsligt fel och att felet orsakat eller riskerar att orsaka skada', 'Att priset var högre än vinnaren', 'Att myndigheten är offentlig'],
+    a: 1,
+    e: 'Överprövning bygger i förenklad form på att ett fel enligt regelverket har orsakat eller riskerat att orsaka leverantören skada.'
+  },
+  {
+    q: 'Varför är dokumentation viktig genom hela upphandlingsprocessen?',
+    options: ['För att kunna förklara krav, bedömningar, beslut och avtalsändringar i efterhand', 'Bara för arkivering', 'Endast när en leverantör vinner', 'Den är oviktig om projektgruppen minns vad som hände'],
+    a: 0,
+    e: 'Dokumentation skapar spårbarhet och gör det möjligt att visa hur beslut och bedömningar har gjorts.'
+  }
+];
+
+export function LouGrundkursQuiz() {
+  return (
+    <CourseQuiz
+      questions={louGrundkursQuestions}
+      passPercent={80}
+      storageKey="anbudly-lou-grundkurs-slutprov"
+    />
+  );
+}
