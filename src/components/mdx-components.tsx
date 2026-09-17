@@ -261,6 +261,7 @@ const components = {
   UiButton,
   Progress,
   Separator,
+  NextLink: Link,
   CodeTabs: ({
     tabs,
   }: React.HTMLAttributes<HTMLElement> & {
