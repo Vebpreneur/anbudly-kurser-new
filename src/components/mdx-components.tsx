@@ -76,6 +76,19 @@ import { Note } from '@/components/note';
 import { Checkbox } from '@/components/checkbox';
 import { Label } from '@/components/label';
 import { Input } from '@/components/input';
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
+import { Badge } from '@/components/ui/badge';
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from '@/components/ui/card';
+import { Button as UiButton } from '@/components/ui/button';
+import { Progress } from '@/components/ui/progress';
+import { Separator } from '@/components/ui/separator';
 
 const components = {
   h1: ({ className, ...children }: React.HTMLAttributes<HTMLElement>) => (
@@ -183,7 +196,6 @@ const components = {
   }: React.HTMLAttributes<HTMLElement>) => {
     const isLightMode = 'dark';
 
-    // Extract language from className (e.g., `language-js` → `js`)
     const match = className?.match(/language-(\w+)/);
     const language = match ? match[1] : 'plaintext';
 
@@ -220,7 +232,6 @@ const components = {
       );
     }
   },
-  // Add your globally available components:
   Preview,
   SearchButton,
   CustomSyntaxHighlighter,
@@ -237,6 +248,19 @@ const components = {
   Checkbox,
   Label,
   Input,
+  Alert,
+  AlertTitle,
+  AlertDescription,
+  Badge,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+  UiButton,
+  Progress,
+  Separator,
   CodeTabs: ({
     tabs,
   }: React.HTMLAttributes<HTMLElement> & {
