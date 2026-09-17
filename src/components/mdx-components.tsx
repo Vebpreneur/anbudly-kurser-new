@@ -19,14 +19,12 @@ import {
   NavListItem,
   NavMenuContent,
 } from '@/components/nav-menu';
-
 import {
   PopoverContent,
   PopoverTrigger,
   Popover,
   PopoverClose,
 } from '@/components/popover';
-
 import {
   SidebarProvider,
   SidebarLayout,
@@ -70,7 +68,6 @@ import {
   DialogFooter,
   DialogHeader,
 } from '@/components/dialog';
-
 import { Folder, FolderTree, File } from '@/components/folder-tree';
 import { Note } from '@/components/note';
 import { Checkbox } from '@/components/checkbox';
@@ -89,6 +86,13 @@ import {
 import { Button as UiButton } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Separator } from '@/components/ui/separator';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+import { CourseQuiz } from '@/components/course-quiz';
 
 const components = {
   h1: ({ className, ...children }: React.HTMLAttributes<HTMLElement>) => (
@@ -195,10 +199,8 @@ const components = {
     ...props
   }: React.HTMLAttributes<HTMLElement>) => {
     const isLightMode = 'dark';
-
     const match = className?.match(/language-(\w+)/);
     const language = match ? match[1] : 'plaintext';
-
     const extractText = (children: React.ReactNode): string => {
       if (typeof children === 'string') return children;
       if (Array.isArray(children)) return children.map(extractText).join('');
@@ -206,7 +208,6 @@ const components = {
         return extractText((children.props as any)?.children || '');
       return '';
     };
-
     if (language !== 'plaintext') {
       return (
         <CustomSyntaxHighlighter
@@ -217,20 +218,19 @@ const components = {
           indicatorColor="bg-blue-900"
         />
       );
-    } else {
-      return (
-        <code
-          className={clsx(
-            'relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm',
-            className
-          )}
-          {...props}
-        >
-          {' '}
-          {children}
-        </code>
-      );
     }
+    return (
+      <code
+        className={clsx(
+          'relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm',
+          className
+        )}
+        {...props}
+      >
+        {' '}
+        {children}
+      </code>
+    );
   },
   Preview,
   SearchButton,
@@ -261,6 +261,11 @@ const components = {
   UiButton,
   Progress,
   Separator,
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+  CourseQuiz,
   NextLink: Link,
   CodeTabs: ({
     tabs,
@@ -268,7 +273,6 @@ const components = {
     tabs: Record<string, { syntax: string; language: string }>;
   }) => {
     const isLightMode = 'dark';
-
     return (
       <CustomSyntaxHighlighter
         tabs={tabs}
@@ -340,7 +344,6 @@ export function Mdx({ code }: Mdxchildren) {
   const Component = useMDXComponent(code, {
     style: 'default',
   });
-
   return (
     <div className="mdx">
       <Component components={components} />
