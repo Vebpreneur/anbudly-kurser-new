@@ -92,53 +92,31 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { CourseQuiz } from '@/components/course-quiz';
+import { CourseQuiz, LouGrundkursQuiz } from '@/components/course-quiz';
 
 const components = {
   h1: ({ className, ...children }: React.HTMLAttributes<HTMLElement>) => (
-    <h1
-      className={`text-3xl font-semibold mt-3 mb-3 ${className}`}
-      {...children}
-    />
+    <h1 className={`text-3xl font-semibold mt-3 mb-3 ${className}`} {...children} />
   ),
-  h2: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => {
-    return (
-      <Link
-        href={`#${props.id}`}
-        className={'cursor-pointer group relative items-center w-fit'}
-      >
-        <h1
-          className={`flex text-2xl hover:underline font-semibold mt-8 mb-4 gap-1 ${className}`}
-          {...props}
-        >
-          {props.children}
-          <span className="text-2xl text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">
-            #
-          </span>
-        </h1>
-      </Link>
-    );
-  },
+  h2: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
+    <Link href={`#${props.id}`} className={'cursor-pointer group relative items-center w-fit'}>
+      <h1 className={`flex text-2xl hover:underline font-semibold mt-8 mb-4 gap-1 ${className}`} {...props}>
+        {props.children}
+        <span className="text-2xl text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">#</span>
+      </h1>
+    </Link>
+  ),
   h3: ({ className, ...children }: React.HTMLAttributes<HTMLElement>) => (
-    <h3
-      className={`text-xl font-semibold mt-6 mb-3 ${className}`}
-      {...children}
-    />
+    <h3 className={`text-xl font-semibold mt-6 mb-3 ${className}`} {...children} />
   ),
   h4: ({ className, ...children }: React.HTMLAttributes<HTMLElement>) => (
-    <h4
-      className={`text-lg font-semibold mt-6 mb-3 ${className}`}
-      {...children}
-    />
+    <h4 className={`text-lg font-semibold mt-6 mb-3 ${className}`} {...children} />
   ),
   p: ({ className, ...children }: React.HTMLAttributes<HTMLElement>) => (
     <p className={`my-4 leading-7 ${className}`} {...children} />
   ),
   a: ({ className, ...children }: React.HTMLAttributes<HTMLElement>) => (
-    <a
-      className={`text-primary underline underline-offset-4 ${className}`}
-      {...children}
-    />
+    <a className={`text-primary underline underline-offset-4 ${className}`} {...children} />
   ),
   ul: ({ className, ...children }: React.HTMLAttributes<HTMLElement>) => (
     <ul className={`list-disc pl-6 my-4 ${className}`} {...children} />
@@ -149,14 +127,8 @@ const components = {
   li: ({ className, ...children }: React.HTMLAttributes<HTMLElement>) => (
     <li className={`mb-2 ${className}`} {...children} />
   ),
-  blockquote: ({
-    className,
-    ...children
-  }: React.HTMLAttributes<HTMLElement>) => (
-    <blockquote
-      className={`border-l-4 border-muted-foreground pl-4 italic my-4 ${className}`}
-      {...children}
-    />
+  blockquote: ({ className, ...children }: React.HTMLAttributes<HTMLElement>) => (
+    <blockquote className={`border-l-4 border-muted-foreground pl-4 italic my-4 ${className}`} {...children} />
   ),
   hr: ({ className, ...props }: React.HTMLAttributes<HTMLHRElement>) => (
     <hr className={`my-4 md:my-8 ${className}`} {...props} />
@@ -176,59 +148,33 @@ const components = {
     <tr className={clsx('border', className)} {...props} />
   ),
   th: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
-    <th
-      className={clsx(
-        'border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right',
-        className
-      )}
-      {...props}
-    />
+    <th className={clsx('border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right', className)} {...props} />
   ),
   td: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
-    <td
-      className={clsx(
-        'border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right',
-        className
-      )}
-      {...props}
-    />
+    <td className={clsx('border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right', className)} {...props} />
   ),
-  code: ({
-    className,
-    children,
-    ...props
-  }: React.HTMLAttributes<HTMLElement>) => {
+  code: ({ className, children, ...props }: React.HTMLAttributes<HTMLElement>) => {
     const isLightMode = 'dark';
     const match = className?.match(/language-(\w+)/);
     const language = match ? match[1] : 'plaintext';
     const extractText = (children: React.ReactNode): string => {
       if (typeof children === 'string') return children;
       if (Array.isArray(children)) return children.map(extractText).join('');
-      if (React.isValidElement(children))
-        return extractText((children.props as any)?.children || '');
+      if (React.isValidElement(children)) return extractText((children.props as any)?.children || '');
       return '';
     };
     if (language !== 'plaintext') {
       return (
         <CustomSyntaxHighlighter
-          tabs={{
-            [language]: { syntax: extractText(children) as string, language },
-          }}
+          tabs={{ [language]: { syntax: extractText(children) as string, language } }}
           themeMode={isLightMode}
           indicatorColor="bg-blue-900"
         />
       );
     }
     return (
-      <code
-        className={clsx(
-          'relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm',
-          className
-        )}
-        {...props}
-      >
-        {' '}
-        {children}
+      <code className={clsx('relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm', className)} {...props}>
+        {' '}{children}
       </code>
     );
   },
@@ -266,21 +212,11 @@ const components = {
   AccordionItem,
   AccordionTrigger,
   CourseQuiz,
+  LouGrundkursQuiz,
   NextLink: Link,
-  CodeTabs: ({
-    tabs,
-  }: React.HTMLAttributes<HTMLElement> & {
-    tabs: Record<string, { syntax: string; language: string }>;
-  }) => {
-    const isLightMode = 'dark';
-    return (
-      <CustomSyntaxHighlighter
-        tabs={tabs}
-        themeMode={isLightMode}
-        indicatorColor="bg-blue-900"
-      />
-    );
-  },
+  CodeTabs: ({ tabs }: React.HTMLAttributes<HTMLElement> & { tabs: Record<string, { syntax: string; language: string }> }) => (
+    <CustomSyntaxHighlighter tabs={tabs} themeMode="dark" indicatorColor="bg-blue-900" />
+  ),
   SidebarProvider,
   SidebarLayout,
   MainContent,
@@ -341,9 +277,7 @@ interface Mdxchildren {
 }
 
 export function Mdx({ code }: Mdxchildren) {
-  const Component = useMDXComponent(code, {
-    style: 'default',
-  });
+  const Component = useMDXComponent(code, { style: 'default' });
   return (
     <div className="mdx">
       <Component components={components} />
