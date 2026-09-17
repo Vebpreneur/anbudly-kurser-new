@@ -7,11 +7,7 @@ import React, {
   useImperativeHandle,
   useEffect,
 } from 'react';
-import {
-  Dialog,
-  DialogTrigger,
-  DialogContent,
-} from '@/components/dialog';
+import { Dialog, DialogTrigger, DialogContent } from '@/components/dialog';
 import { Input } from '@/components/input';
 import SearchButton from '@/components/search-button';
 import { Text, Search } from 'lucide-react';
@@ -108,15 +104,12 @@ const SearchDialog = forwardRef<SearchDialogHandle, SearchDialogProps>(
 
     return (
       <Dialog open={open} setOpen={setOpen}>
-        <DialogTrigger className='hidden sm:block'>
-          <SearchButton
-            size="sm"
-            placeholder="Search documentation.."
-          />
+        <DialogTrigger className="hidden sm:block">
+          <SearchButton size="sm" placeholder="Search documentation.." />
         </DialogTrigger>
         <DialogContent className="fixed h-auto sm:max-w-xl bg-muted p-2 top-40">
-        {/* Close Button */}
-        {/* <DialogCloseTrigger asChild>
+          {/* Close Button */}
+          {/* <DialogCloseTrigger asChild>
           <button
             className="cursor-pointer border border-border text-lg absolute -top-2 -right-2 bg-muted text-black dark:text-white rounded-full w-5 h-5 flex items-center justify-center shadow"
             aria-label="Close"
