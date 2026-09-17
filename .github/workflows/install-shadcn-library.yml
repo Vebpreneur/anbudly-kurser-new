@@ -1,0 +1,101 @@
+name: Installera shadcn-komponentbibliotek
+
+on:
+  push:
+    paths:
+      - '.github/workflows/install-shadcn-library.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  installera-komponenter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hämta repository
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Installera pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Installera Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Installera befintliga beroenden
+        run: pnpm install --frozen-lockfile
+
+      - name: Lägg till shadcn-komponenter
+        run: >-
+          pnpm dlx shadcn@latest add
+          accordion
+          alert
+          alert-dialog
+          aspect-ratio
+          avatar
+          badge
+          breadcrumb
+          button
+          calendar
+          card
+          carousel
+          checkbox
+          collapsible
+          command
+          context-menu
+          dialog
+          drawer
+          dropdown-menu
+          form
+          hover-card
+          input
+          input-otp
+          label
+          menubar
+          navigation-menu
+          pagination
+          popover
+          progress
+          radio-group
+          resizable
+          scroll-area
+          select
+          separator
+          sheet
+          sidebar
+          skeleton
+          slider
+          sonner
+          switch
+          table
+          tabs
+          textarea
+          toggle
+          toggle-group
+          tooltip
+          chart
+          --yes
+
+      - name: Formatera genererade filer
+        run: pnpm exec prettier --write components.json package.json pnpm-lock.yaml src/components src/app/globals.css src/hooks src/lib || true
+
+      - name: Kontrollera bygge
+        run: pnpm build
+
+      - name: Spara komponentbiblioteket
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add components.json package.json pnpm-lock.yaml src/components src/app/globals.css src/hooks src/lib
+          if git diff --cached --quiet; then
+            echo "Inga ändringar att spara."
+          else
+            git commit -m "Lägg till komplett shadcn-komponentbibliotek"
+            git push origin master
+          fi
