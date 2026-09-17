@@ -1,0 +1,52 @@
+name: Rätta shadcn-importer
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-shadcn-imports.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hämta repository
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Installera pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Installera Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Rätta felaktiga cn-importer
+        run: |
+          grep -RIl "from 'cn'" src/components/ui | xargs -r sed -i "s/from 'cn'/from '@\/lib\/utils'/g"
+          grep -RIl 'from "cn"' src/components/ui | xargs -r sed -i 's/from "cn"/from "@\/lib\/utils"/g'
+
+      - name: Installera beroenden
+        run: pnpm install --frozen-lockfile
+
+      - name: Bygg projektet
+        run: pnpm build
+
+      - name: Spara rättningen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/components/ui
+          if git diff --cached --quiet; then
+            echo "Inga importer behövde rättas."
+          else
+            HUSKY=0 git commit -m "Rätta shadcn cn-importer"
+            git push origin master
+          fi
