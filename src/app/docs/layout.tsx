@@ -44,22 +44,29 @@ export default function DocsLayout({
           </SidebarHeader>
 
           <SidebarContent>
-            {sidebarNav.map((section) => (
-              <SidebarMenuItem
-                isCollapsable={section.pages.length > 0}
-                key={section.title}
-                label={section.title}
-                href={'href' in section ? section.href : undefined}
-                icon={section.icon}
-                defaultOpen={section.defaultOpen}
-              >
-                {section.pages.map((page) => (
-                  <NestedLink key={page.href} href={page.href}>
-                    {page.title}
-                  </NestedLink>
-                ))}
-              </SidebarMenuItem>
-            ))}
+            {sidebarNav.map((section) => {
+              const sectionHref =
+                'href' in section && typeof section.href === 'string'
+                  ? section.href
+                  : undefined;
+
+              return (
+                <SidebarMenuItem
+                  isCollapsable={section.pages.length > 0}
+                  key={section.title}
+                  label={section.title}
+                  href={sectionHref}
+                  icon={section.icon}
+                  defaultOpen={section.defaultOpen}
+                >
+                  {section.pages.map((page) => (
+                    <NestedLink key={page.href} href={page.href}>
+                      {page.title}
+                    </NestedLink>
+                  ))}
+                </SidebarMenuItem>
+              );
+            })}
           </SidebarContent>
         </Sidebar>
 
