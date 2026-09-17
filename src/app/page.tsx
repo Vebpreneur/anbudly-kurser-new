@@ -1,175 +1,136 @@
 'use client';
-import { Github } from 'lucide-react';
+
+import Link from 'next/link';
+import { ArrowRight, BookOpen, CheckCircle2, Search, Sparkles } from 'lucide-react';
 import { ModeToggle } from '@/components/mode-toggle';
-import Image from 'next/image';
-import { Button } from '@/components/button';
-import { useRouter } from 'next/navigation';
-import { motion } from 'framer-motion';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Progress } from '@/components/ui/progress';
+
+const categories = [
+  ['Grunder', 'LOU, principer, process och begrepp.'],
+  ['Avtal & uppföljning', 'Avtalsvillkor, uppföljning och leverans.'],
+  ['Juridik', 'Rättsmedel, sekretess och juridisk tillämpning.'],
+  ['Specialområden', 'Fördjupning inom särskilda upphandlingsområden.'],
+  ['Leverantör', 'Att hitta, bedöma och vinna offentliga affärer.'],
+  ['Regelefterlevnad & framtid', 'Nya krav, hållbarhet, AI och förändrad reglering.'],
+];
 
 export default function Home() {
-  const router = useRouter();
-
   return (
-    <div className="flex flex-col min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-white">
-      {/* Sticky Header */}
-      <header className="sticky top-0 z-10 bg-white/90 dark:bg-gray-950/90 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
-        <div className="container mx-auto px-4 py-2 flex justify-between items-center">
-          <div className="flex-1">{/* Empty space for layout balance */}</div>
-          <nav className="flex-1 flex justify-center">
-            {/* Navigation links can be added here */}
-          </nav>
-          <div className="flex-1 flex gap-2 justify-end">
-            <ModeToggle />
-            <Button
-              onClick={() =>
-                router.push('https://github.com/sanjayc208/pinexio')
-              }
-            >
-              <Github className="h-[1.2rem] w-[1.2rem] transition-all" />
+    <div className="min-h-screen bg-background text-foreground">
+      <header className="sticky top-0 z-20 border-b bg-background/95 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <Link href="/" className="text-lg font-semibold tracking-tight">
+            Anbudly Kurser
+          </Link>
+          <div className="flex items-center gap-2">
+            <Button asChild variant="ghost" size="sm">
+              <Link href="/docs/kurser">Kurser</Link>
             </Button>
+            <Button asChild variant="ghost" size="sm">
+              <Link href="/docs/anbudly-ai">Anbudly AI</Link>
+            </Button>
+            <ModeToggle />
           </div>
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="flex-grow flex flex-col justify-center items-center px-4 py-4 md:py-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="container mx-auto flex flex-col items-center max-w-6xl"
-        >
-          {/* Logo and Title */}
-          <div className="text-center mb-8">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex gap-2 lg:gap-4 justify-center xs:px-2"
-            >
-              <Image
-                alt="logo"
-                className="h-auto w-auto dark:invert"
-                width={100}
-                height={100}
-                src={`/logos/pinedocs.png`}
-              />
-              <h1 className="text-5xl content-center md:text-7xl font-stretch-110% -tracking-tighter text-gray-900 dark:text-white">
-                PINE<span className="md:text-8xl">X</span>IO
+      <main>
+        <section className="border-b">
+          <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+            <div className="max-w-3xl">
+              <Badge variant="secondary" className="mb-6">Offentlig upphandling</Badge>
+              <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
+                Kurser för dig som arbetar med offentliga affärer
               </h1>
-            </motion.div>
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-shadow-xs mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
-            >
-              A customizable open-source documentation template built with
-              Next.js 15, Tailwind CSS 4, and Contentlayer for beautiful, fast,
-              and flexible documentation.
-            </motion.p>
-          </div>
-
-          {/* Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-row sm:flex-row gap-4 mt-8"
-          >
-            <Button
-              className="px-6 py-3"
-              variant={'primary'}
-              onClick={() => router.push('/docs/getting-started/introduction')}
-              size={'md'}
-            >
-              Get Started
-            </Button>
-            <Button
-              className="px-6 py-3 gap-2"
-              variant={'outline'}
-              size={'md'}
-              onClick={() =>
-                router.push('https://github.com/sanjayc208/pinexio')
-              }
-            >
-              <Github size={20} />
-              GitHub
-            </Button>
-          </motion.div>
-        </motion.div>
-        <div className="mt-16 mb-6 flex flex-wrap justify-center items-center gap-8 md:gap-12">
-          {[
-            {
-              src: '/logos/next15.png',
-              label: 'Next.js 15',
-              className: 'dark:invert',
-            },
-            {
-              src: '/logos/ts.png',
-              label: 'Typescript',
-              className: 'dark:invert',
-            },
-            {
-              src: '/logos/tailwindcss-light.png',
-              label: 'Tailwind CSS 4',
-              className: 'dark:invert',
-            },
-            { src: '/logos/contentlayer.png', label: 'Contentlayer' },
-            { src: '/logos/mdx.png', label: 'MDX' },
-          ].map(({ src, label, className }) => (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              key={label}
-              className="flex flex-col items-center"
-            >
-              <div className="w-5 h-5 md:w-12 md:h-12 flex items-center justify-center">
-                <Image
-                  width={100}
-                  height={100}
-                  src={src}
-                  alt={`${label} Logo`}
-                  className={className}
-                />
-              </div>
-              <span className="mt-2 text-sm">{label}</span>
-            </motion.div>
-          ))}
-        </div>
-      </main>
-
-      {/* Sticky Footer */}
-      <footer className="sticky bottom-0 z-10 bg-white/90 dark:bg-gray-950/90 backdrop-blur-sm border-t border-gray-200 dark:border-gray-800">
-        <div className="container mx-auto px-4 py-3 text-center text-gray-600 dark:text-gray-400">
-          <div className="flex justify-end items-center space-x-4">
-            <Button
-              className="px-4 py-2 text-sm font-medium gap-2"
-              onClick={() =>
-                window.open(
-                  'https://vercel.com/new/clone?repository-url=https://github.com/sanjayc208/pinexio',
-                  '_blank'
-                )
-              }
-            >
-              <Image
-                src={'/logos/vercel.png'}
-                height={'20'}
-                width={'20'}
-                alt={'Deploy Vercel'}
-                className={'dark:invert'}
-              />
-              <span>Deploy to Vercel</span>
-            </Button>
-            <div className="flex text-sm text-right gap-3">
-              <p>
-                Built with ❤️ by <strong>Sanjay Rajeev</strong>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
+                Fördjupa dig i offentlig upphandling genom strukturerade, textbaserade kurser med exempel, kontrollfrågor, praktiska fall och tydliga vägar vidare.
               </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Button asChild size="lg">
+                  <Link href="/docs/kurser/lou-grundkurs">
+                    Börja med LOU <ArrowRight />
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <Link href="/docs/kurser">
+                    <Search /> Se alla kurser
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
-      </footer>
+        </section>
+
+        <section className="mx-auto max-w-7xl px-6 py-16">
+          <div className="mb-8 max-w-2xl">
+            <h2 className="text-2xl font-semibold tracking-tight">Utforska efter område</h2>
+            <p className="mt-2 text-muted-foreground">Kurserna organiseras efter det arbete du faktiskt behöver kunna utföra.</p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {categories.map(([title, description]) => (
+              <Card key={title}>
+                <CardHeader>
+                  <CardTitle>{title}</CardTitle>
+                  <CardDescription>{description}</CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        <section className="border-y bg-muted/30">
+          <div className="mx-auto grid max-w-7xl gap-6 px-6 py-16 lg:grid-cols-2">
+            <Card>
+              <CardHeader>
+                <div className="mb-2 flex items-center gap-2 text-sm text-muted-foreground">
+                  <BookOpen className="size-4" /> Referenskurs
+                </div>
+                <CardTitle>Grundkurs i LOU</CardTitle>
+                <CardDescription>
+                  Från principerna bakom lagen till krav, utvärdering, avtal och rättsmedel.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-5">
+                <div>
+                  <div className="mb-2 flex justify-between text-sm">
+                    <span>10 delar</span><span>Grundnivå</span>
+                  </div>
+                  <Progress value={10} />
+                </div>
+                <Button asChild variant="outline">
+                  <Link href="/docs/kurser/lou-grundkurs">Öppna kursen <ArrowRight /></Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <div className="mb-2 flex items-center gap-2 text-sm text-muted-foreground">
+                  <Sparkles className="size-4" /> Anbudly AI
+                </div>
+                <CardTitle>Fråga medan du lär dig</CardTitle>
+                <CardDescription>
+                  AI-stödet byggs in som ett komplement till kursinnehållet så att frågor kan kopplas till rätt del av materialet.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3 text-sm text-muted-foreground">
+                <p className="flex gap-2"><CheckCircle2 className="mt-0.5 size-4 shrink-0" /> Förklara begrepp och resonemang.</p>
+                <p className="flex gap-2"><CheckCircle2 className="mt-0.5 size-4 shrink-0" /> Hitta relevant kursdel snabbare.</p>
+                <p className="flex gap-2"><CheckCircle2 className="mt-0.5 size-4 shrink-0" /> Ställ följdfrågor på det du läser.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      </main>
     </div>
   );
 }
