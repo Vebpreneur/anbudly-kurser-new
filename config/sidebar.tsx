@@ -1,127 +1,62 @@
-import { Component, Paintbrush, Rocket, Search, Wrench } from 'lucide-react';
+import {
+  BookOpen,
+  BriefcaseBusiness,
+  FileCheck2,
+  Landmark,
+  Scale,
+  ShieldCheck,
+} from 'lucide-react';
 
 export const sidebarNav = [
   {
-    title: 'Getting Started',
-    icon: <Rocket className="h-5 w-5" />,
+    title: 'Grunder',
+    icon: <BookOpen className="h-5 w-5" />,
     defaultOpen: true,
     pages: [
-      {
-        title: 'Introduction',
-        href: '/docs/getting-started/introduction',
-      },
-      {
-        title: 'Installation',
-        href: '/docs/getting-started/installation',
-      },
-      {
-        title: 'Quick Start',
-        href: '/docs/getting-started/quick-start',
-      },
+      { title: 'Alla kurser', href: '/docs/kurser' },
+      { title: 'Grundkurs i LOU', href: '/docs/kurser/lou-grundkurs' },
+      { title: '1. Grunder och begrepp', href: '/docs/kurser/lou-grundkurs/01-grunder' },
+      { title: '2. Grundprinciperna', href: '/docs/kurser/lou-grundkurs/02-principer' },
+      { title: '3. Planering', href: '/docs/kurser/lou-grundkurs/03-planering' },
+      { title: '4. Förfarande', href: '/docs/kurser/lou-grundkurs/04-forfarande' },
+      { title: '5. Krav', href: '/docs/kurser/lou-grundkurs/05-krav' },
+      { title: '6. Utvärdering', href: '/docs/kurser/lou-grundkurs/06-utvardering' },
+      { title: '7. Avtal', href: '/docs/kurser/lou-grundkurs/07-avtal' },
+      { title: '8. Rättsmedel', href: '/docs/kurser/lou-grundkurs/08-rattsmedel' },
+      { title: '9. Praktiskt fall', href: '/docs/kurser/lou-grundkurs/09-praktiskt-fall' },
+      { title: '10. Slutprov', href: '/docs/kurser/lou-grundkurs/10-slutprov' },
     ],
   },
   {
-    title: 'Components',
-    icon: <Component className="h-5 w-5" />,
+    title: 'Avtal & uppföljning',
+    icon: <FileCheck2 className="h-5 w-5" />,
+    defaultOpen: false,
+    pages: [],
+  },
+  {
+    title: 'Juridik',
+    icon: <Scale className="h-5 w-5" />,
+    defaultOpen: false,
+    pages: [],
+  },
+  {
+    title: 'Specialområden',
+    icon: <Landmark className="h-5 w-5" />,
+    defaultOpen: false,
+    pages: [],
+  },
+  {
+    title: 'Leverantör',
+    icon: <BriefcaseBusiness className="h-5 w-5" />,
+    defaultOpen: false,
+    pages: [],
+  },
+  {
+    title: 'Regelefterlevnad & framtid',
+    icon: <ShieldCheck className="h-5 w-5" />,
     defaultOpen: false,
     pages: [
-      {
-        title: 'Button',
-        href: '/docs/components/button',
-      },
-      {
-        title: 'Input',
-        href: '/docs/components/input',
-      },
-      {
-        title: 'Label',
-        href: '/docs/components/label',
-      },
-      {
-        title: 'Checkbox',
-        href: '/docs/components/checkbox',
-      },
-      {
-        title: 'Search Button',
-        href: '/docs/components/search-button',
-      },
-      {
-        title: 'Tabs',
-        href: '/docs/components/tabs',
-      },
-      {
-        title: 'Sidebar',
-        href: '/docs/components/sidebar',
-      },
-      {
-        title: 'Steps',
-        href: '/docs/components/steps',
-      },
-      {
-        title: 'Syntax Highlighter',
-        href: '/docs/components/syntax-highlighter',
-      },
-      {
-        title: 'Folder Tree',
-        href: '/docs/components/folder-tree',
-      },
-      {
-        title: 'Note',
-        href: '/docs/components/note',
-      },
-      {
-        title: 'Menu',
-        href: '/docs/components/menu',
-      },
-      {
-        title: 'Popover',
-        href: '/docs/components/popover',
-      },
-      {
-        title: 'Dialog',
-        href: '/docs/components/dialog',
-      },
-      {
-        title: 'Select',
-        href: '/docs/components/select',
-      },
+      { title: 'Anbudly AI', href: '/docs/anbudly-ai' },
     ],
-  },
-  {
-    title: 'Customization',
-    icon: <Wrench className="h-5 w-5" />,
-    defaultOpen: true,
-    pages: [
-      {
-        title: 'Sidebar',
-        href: '/docs/customization/sidebar',
-      },
-      {
-        title: 'Toc',
-        href: '/docs/customization/toc',
-      },
-      {
-        title: 'Font',
-        href: '/docs/customization/font',
-      },
-      {
-        title: 'SEO and Social Sharing',
-        href: '/docs/customization/seo-and-social-sharing',
-      },
-    ],
-  },
-  {
-    title: 'Theme',
-    icon: <Paintbrush className="h-5 w-5" />,
-    defaultOpen: true,
-    href: '/docs/theme',
-    pages: [],
-  },
-  {
-    title: 'Search Bar',
-    icon: <Search className="h-5 w-5" />,
-    defaultOpen: true,
-    href: '/docs/search-bar',
-    pages: [],
   },
 ];
